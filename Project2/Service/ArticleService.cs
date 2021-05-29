@@ -1,7 +1,6 @@
 ﻿using DataAccess.Dto;
 using DataAccess.Entities;
 using DataAccess.Nhibernate;
-using Microsoft.Extensions.Configuration;
 using NHibernate;
 using System;
 using System.Collections.Generic;

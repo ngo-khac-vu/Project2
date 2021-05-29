@@ -1,0 +1,28 @@
+Overview
+Project is a part of interview. Project use to export price of artical with specific date.
+
+Technology
+Project used some technology: ASP.NET core - Angular - HTML - CSS - Nhibernate - SQL Server.
+
+Enviroment: 
+	- .Net 5.0 runtime/sdk
+	- SQL server 2012
+	- NodeJS
+Set up
+To run the project
+- Run script to prepare data and create dummy data.
+- Change connectionstring in Project2/appsetings.json
+
+Task/user case:
+- User can be choose a date and export data.
+- Data include all articles with fields (name, slogan, discount price, net price)
+- Discount price is calculated by formular:
+	IF exist discount of article valid in date (start_discount < date < end_discount)
+	THEN [discount_price] = (100% - discount percent) * net price
+	ELSE 
+	THEN [discount_price] = sale price
+	
+	IF [discount_price] < net_price
+	THEN [discount_price] = net_price
+	[discount_price] = [discount_price] * (100% + VAT ratio)
+- User can export data if he/she doesn't select a specific date
