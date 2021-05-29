@@ -1,24 +1,25 @@
-<h1 id="tableLabel">Weather forecast</h1>
+<h1 id="tableLabel">Export price of article</h1>
 
-<p>This component demonstrates fetching data from the server.</p>
+<p>To export the article with price please enter date and click button "GetData".</p>
 
-<p *ngIf="!forecasts"><em>Loading...</em></p>
-
-<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="forecasts">
+<p *ngIf="!specificDate"><em>Please enter date</em></p>
+<input type="date" [(ngModel)]="specificDate" />
+<button (click)="onGetData()">Get Data</button>
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="articles">
   <thead>
     <tr>
-      <th>Date</th>
-      <th>Temp. (C)</th>
-      <th>Temp. (F)</th>
-      <th>Summary</th>
+      <th>Name</th>
+      <th>Slogan</th>
+      <th>Price</th>
+      <th>Net Price</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let forecast of forecasts">
-      <td>{{ forecast.date }}</td>
-      <td>{{ forecast.temperatureC }}</td>
-      <td>{{ forecast.temperatureF }}</td>
-      <td>{{ forecast.summary }}</td>
+    <tr *ngFor="let article of articles">
+      <td>{{ article.name }}</td>
+      <td>{{ article.slogan }}</td>
+      <td>{{ article.price }}</td>
+      <td>{{ article.netPrice }}</td>
     </tr>
   </tbody>
 </table>
