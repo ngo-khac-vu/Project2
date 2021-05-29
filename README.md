@@ -1,4 +1,4 @@
 # Project2
-Project for fun
+Project
 
 Project as a part of interview with *** company.
